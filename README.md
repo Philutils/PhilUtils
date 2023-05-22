@@ -2,7 +2,7 @@ Who software developers have taken code here and there for their creation know w
 
 So here, I am specialized in Windows 32 bit - 64 sometimes Apps and libraries. Specifically Vb 6, VBA, VB.NET
 Here I go with VB and VBA. Why? Next chapter tomorrow.
-I want to share old code I've done, is tested and working good. I want to share for to reward the developer's community who all these years did allow me to find out ways in my programmation. I think of VbFrance, and some others, I will update this file.
+I want to share old code I've done, is tested and working good. I want to share for to reward the developer's community who all these years did allow me to find out ways in my programmation. I think of VbFrance, codeguru, stackowerflow and some others.
 
 So, I have a lot of code and still a lot of "todo" in my code and I wanna publish clean code. As well, it will be first time that I publish this big work and now I begin small.
 
