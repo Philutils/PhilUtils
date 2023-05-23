@@ -723,7 +723,7 @@ SHGetKnownFolderPath_End: 'May do Error if SHGetKnownFolderPath not implemented 
                     If PathOfGUID = "" Then
                         'Should never happen, but we never know with microsoft...
                         PathOfGUID = PathOfGUID(FOLDERID_Windows) 'Go through Windows and replace
-                        PathOfGUID = Replace(PathOfGUID, "\Windows", "\Program Files (x86)", , , vbTextCompare)
+                        PathOfGUID = Left(PathOfGUID, Len(PathOfGUID) - Len("\Windows")) & "\Program Files (x86)" 'Replace does not exist yet in VBA 97
                         If Not FolderExists(PathOfGUID) Then
                             'Hmm, did not work
                             PathOfGUID = "" 'Should not happen
@@ -735,7 +735,7 @@ SHGetKnownFolderPath_End: 'May do Error if SHGetKnownFolderPath not implemented 
                     If PathOfGUID = "" Then
                         'Should never happen, but on old systems.... happens with Win97
                         PathOfGUID = PathOfGUID(FOLDERID_Windows) 'Go through Windows and replace
-                        PathOfGUID = Replace(PathOfGUID, "\Windows", "\Program Files", , , vbTextCompare)
+                        PathOfGUID = Left(PathOfGUID, Len(PathOfGUID) - Len("\Windows")) & "\Program Files" 'Replace does not exist yet in VBA 97
                         If Not FolderExists(PathOfGUID) Then
                             'Hmm, did not work
                             PathOfGUID = "" 'Should not happen
@@ -780,24 +780,24 @@ SHGetKnownFolderPath_End: 'May do Error if SHGetKnownFolderPath not implemented 
                                                 '64 bit  32 bit  FOLDERID_ProgramFilesCommonX86  %ProgramFiles(x86)%\Common Files
                                                 ' -If you call a X86 Folder from a Win64 Thread, %ProgramFiles(x86)%\Common Files
                 If X64X32.IsThisWindowsX64 Then
-                    'Expected %SystemDrive%\Program Files (x86)
+                    'Expected %SystemDrive%\Program Files (x86)\Common Files
                     PathOfGUID = EnvironByName("CommonProgramFiles(x86)") 'Look in Environ
                     If PathOfGUID = "" Then
                         'Should never happen, but we never know with microsoft...
                         PathOfGUID = PathOfGUID(FOLDERID_Windows) 'Go through Windows and replace
-                        PathOfGUID = Replace(PathOfGUID, "\Windows", "\Program Files (x86)\Common Files", , , vbTextCompare)
+                        PathOfGUID = Left(PathOfGUID, Len(PathOfGUID) - Len("\Windows")) & "\Program Files (x86)\Common Files" 'Replace does not exist yet in VBA 97
                         If Not FolderExists(PathOfGUID) Then
                             'Hmm, did not work
                             PathOfGUID = "" 'Should not happen
                         End If
                     End If
                 Else
-                    'Expected %SystemDrive%\Program Files
+                    'Expected %SystemDrive%\Program Files\Common Files
                     PathOfGUID = EnvironByName("CommonProgramFiles") 'Look in Environ
                     If PathOfGUID = "" Then
                         'Should never happen, but on old systems.... happens with Win97
                         PathOfGUID = PathOfGUID(FOLDERID_Windows) 'Go through Windows and replace
-                        PathOfGUID = Replace(PathOfGUID, "\Windows", "\Program Files\Common Files", , , vbTextCompare)
+                        PathOfGUID = Left(PathOfGUID, Len(PathOfGUID) - Len("\Windows")) & "\Program Files\Common Files" 'Replace does not exist yet in VBA 97
                         If Not FolderExists(PathOfGUID) Then
                             'Hmm, did not work
                             PathOfGUID = "" 'Should not happen
