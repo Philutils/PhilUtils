@@ -34,7 +34,7 @@ Option Explicit
 '                  '    Dim Doc As Document
 '                  '    Set Doc = ActiveDocument
 '                  '    Doc.Paragraphs.Add
-'                  '    Doc.Paragraphs.Last.Range.Text = IIf(X64X32, "Windows 64 bit", "Windows 32 bit") & ",  " & _
+'                  '    Doc.Paragraphs.Last.Range.Text = IIf(IsThisWindowsX64, "Windows 64 bit", "Windows 32 bit") & ",  " & _
 '                  '                                     IIf(IsThisProcessX64, "Process 64 bit", "Process 32 bit")
 '                  'End Sub
 '
