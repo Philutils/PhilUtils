@@ -9,7 +9,7 @@ It looks good and Microsoft did big progress since I know them BUT: I want my co
 With my way of programming I want my soft to continue working on old systems, so I integrate new with old and I get this Class KnownFolders with access on them on each system from Win97 to Win 11
 
 
-So in KNOWNFOLDERS.cls, first it will be resolved the modern way using SHGetKnownFolderPath from kernel32. If this fails (on old computers), the passed KNOWNFOLDERID will be translated into the old naming we had in REgistry Current User ShellFolders and read there.
+So in KNOWNFOLDERS.cls, first it will be resolved the modern way using SHGetKnownFolderPath from kernel32. If this fails (on old computers), the passed KNOWNFOLDERID will be translated into the old naming we had in Registry Current User ShellFolders and read there.
 
 KnownFolders.cls uses X64X32.bas and Registry.cls (when no success with SHGetKnownFolderPath) and Registry uses WinApiError.bas for its messages.
 
