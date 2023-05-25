@@ -2,16 +2,20 @@ Who software developers have taken code here and there for their creation know w
 
 So here, Made with attention and Tested on Win97 Win XP Win 10 Word 13. Still todo is adapt API call #IF VBA for modern VBA.
 
-KNOWNFOLDER s is discussed in Software has to do with Folders like Desktop, Music etc. See URL: https://learn.microsoft.com/en-us/windows/win32/shell/knownfolderid
+Please I need Help. In my Soft I need at some point to know if dynamically if the current process (running my code) is X64 or X32 Process. Typically in VBA Word for to know if running new Word VBA7 or old Word 97 till 2015...
 
-It looks good and Microsoft did big progress since I know them BUT: I want my code to work on new AND old systems. Goal: From Win97 to  Win11 :) ... so if you look again at the Url above about KnownFolders, and you look on old systems, ... we also had a way to read registry and find the "Special" folders like Desktop MyDocuments. Now with Knownfolders as discribed in Ms documentation, we have access to more than 100 constants and GUID's that will referr to known folders.
+This X64X32.bas implements this But: I do not have a System VBA7 for to test
 
-With my way of programming I want my soft to continue working on old systems, so I integrate new with old and I get this Class KnownFolders with access on them on each system from Win97 to Win 11
+Wold someone be so kind and test in dubug mode this moduse, with special attention at the places where written todo?
+
+Thanks for kind help
+
+Philippe Hollmuller.
+
+Usage:
+
+Import X64X32.bas in your Word VBA project and call:
 
 
-So in KNOWNFOLDERS.cls, first it will be resolved the modern way using SHGetKnownFolderPath from kernel32. If this fails (on old computers), the passed KNOWNFOLDERID will be translated into the old naming we had in Registry Current User ShellFolders and read there.
-
-KnownFolders.cls uses X64X32.bas and Registry.cls (when no success with SHGetKnownFolderPath) and Registry uses WinApiError.bas for its messages.
-
-Please enjoy the reading.
+implements Two Public Properties: IsThisWindowsX64 and IsThisProcessX64
 
