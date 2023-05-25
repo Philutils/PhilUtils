@@ -6,25 +6,6 @@ Please I need Help. In my Soft I need at some point to know if dynamically if th
 
 This X64X32.bas implements this But: I do not have a System VBA7 for to test
 
-Wold someone be so kind and test in dubug mode this moduse, with special attention at the places where written todo?
+Would someone be so kind and test in dubug mode this moduse, with special attention at the places where written todo?
 
-Thanks for kind help
-
-Philippe Hollmuller.
-
-Usage:
-
-Import X64X32.bas in your Word VBA project and call in ThisDocument:
-Option Explicit
-
-Private Sub Document_Open()
-    Dim Doc As Document
-    Set Doc = ActiveDocument
-    Doc.Paragraphs.Add
-    Doc.Paragraphs.Last.Range.Text = IIf(IsThisWindowsX64, "Windows 64 bit", "Windows 32 bit") & ",  " & _
-                                     IIf(IsThisProcessX64, "Process 64 bit", "Process 32 bit")
-End Sub
-
-
-implements Two Public Properties: IsThisWindowsX64 and IsThisProcessX64
-
+Thanks for kind help, Please do test X64X32.bas
