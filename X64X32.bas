@@ -1,4 +1,5 @@
 Option Explicit
+
 'Please Help: I need someone who uses Word X64 and VBA7 to go in debug through the IF VBA7 API calls and looks if working and informs...
 '             see the only If VBA7 todo in the code.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
