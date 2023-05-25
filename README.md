@@ -14,7 +14,16 @@ Philippe Hollmuller.
 
 Usage:
 
-Import X64X32.bas in your Word VBA project and call:
+Import X64X32.bas in your Word VBA project and call in ThisDocument:
+Option Explicit
+
+Private Sub Document_Open()
+    Dim Doc As Document
+    Set Doc = ActiveDocument
+    Doc.Paragraphs.Add
+    Doc.Paragraphs.Last.Range.Text = IIf(IsThisWindowsX64, "Windows 64 bit", "Windows 32 bit") & ",  " & _
+                                     IIf(IsThisProcessX64, "Process 64 bit", "Process 32 bit")
+End Sub
 
 
 implements Two Public Properties: IsThisWindowsX64 and IsThisProcessX64
