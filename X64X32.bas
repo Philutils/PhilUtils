@@ -1,7 +1,6 @@
-Attribute VB_Name = "X64X32"
 Option Explicit
 'Please Help: I need someone who uses Word X64 and VBA7 to go in debug through the IF VBA7 API calls and looks if working and informs...
-'             see the only todo in the code.
+'             see the only If VBA7 todo in the code.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 'HEADER          Description: IsThisWindowsX64? IsThisProcessX64?  300 lines of Code and Comment, 150 without comments. Working tested made with attention.
 '''''''''''''''''''''''''''''
@@ -276,12 +275,6 @@ IsWin64Process_Begin:
     Else
         'MsgBox "Debug: IsWow64Process Call Error:  " & Err.Description & vbCrLf & "IsWin64Process(" & CStr(hProcess) & ") = " & CStr(IsWin64Process)
     End If
-End Function
-
-Private Function EnvironByName(Name As String) As String
-    On Error Resume Next 'Because Key could be empty or other errors could happen, we return "" if Error
-    EnvironByName = Environ(Name)
-    On Error GoTo 0
 End Function
 
 Private Function FolderExists(Path As String)
